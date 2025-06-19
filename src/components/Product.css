@@ -1,0 +1,37 @@
+.product-container{
+
+    padding:80px;
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #2D3439;
+}
+
+.product-content{
+    color: #ECECEC;
+    gap: 30px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-content h1{
+    font-size: 40px;
+    font-family: Manrope, sans-serif;
+}
+
+.product-content p{
+    font-family: Manrope, sans-serif;
+}
+
+.product-image{
+    max-width: 50%;
+}
+
+.product-image img{
+    width: 440px;
+    float: right;
+}
+
