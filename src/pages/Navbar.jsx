@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "../pages/Navbar.css"
+import React from "react";
+import { Link } from "react-router-dom";
+import "../pages/Navbar.css";
 import Logo from "../assets/images/worldwise.png"
 
 const Navbar = () => {

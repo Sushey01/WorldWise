@@ -1,11 +1,14 @@
 import React from "react";
 import "../pages/HeroSection.css"
+import Navbar from "./Navbar";
 
 const HeroSection = () => {
  
   return (
     <section className="section1">
+     
       <div className="hero-container">
+         <Navbar/>
           <div className="hero-content">
             <h1>
               You travel the world. <br/>WorldWise keeps track of your adventures.

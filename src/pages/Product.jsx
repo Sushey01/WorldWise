@@ -1,10 +1,15 @@
 import React from "react";
 import "./Product.css";
 import ProductImage from "../assets/images/productImage.jpg";
+import Navbar from "./Navbar";
 
 const Product = () => {
   return (
-    <div className="product-container">
+    <section className="section1">
+      <div className="product-main">
+        <Navbar/>
+      <div className="product-container">
+      
      
         <div className="product-image">
           <img src={ProductImage} alt="product-img" />
@@ -23,6 +28,10 @@ const Product = () => {
         </p>
       </div>
     </div>
+      </div>
+    
+    </section>
+    
   );
 };
 
