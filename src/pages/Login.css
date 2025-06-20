@@ -1,0 +1,63 @@
+.login-container{
+    width: 100%;
+    justify-items: center;
+    gap: 25px;
+}
+
+
+.login-box{
+    padding: 30px;
+    border: 1px solid ;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color:#42484d ;
+    color: #ececec;
+    border-radius: 7px;
+    gap: 25px;
+}
+
+.email-address{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.email-address p{
+    font-size: 18px;
+    font-family: Manrope, sans-serif;
+}
+
+.password p{
+    font-size: 18px;
+    font-family: Manrope, sans-serif;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.userInput{
+    padding: 10px;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.another-login-button{
+    background-color: #00c46a;
+    width: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 550;
+    color: #2d3439;
+    font-family: Manrope, sans-serif;
+    border: none;
+    cursor: pointer;
+}
