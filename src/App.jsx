@@ -1,15 +1,13 @@
 import React from 'react'
 import './App.css'
-import HeroSection from './components/HeroSection'
-import Pricing from './components/Pricing'
-import Product from './components/Product'
+import HeroSection from './pages/HeroSection'
+import Pricing from './pages/Pricing'
+import Product from './pages/Product'
 
 const App = () => {
   return (
     <div>
-      {/* <HeroSection/> */}
-      {/* <Pricing/> */}
-      <Product/>
+      <HeroSection/>
     </div>
   )
 }
