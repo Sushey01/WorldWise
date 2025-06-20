@@ -1,0 +1,68 @@
+.form{
+    padding: 60px;
+    width: 100%;
+    justify-items: center;
+}
+
+
+.city{
+    border: 1px solid;
+    padding: 30px;
+    background-color:#42484D;
+    width: 40%;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Manrope, sans-serif;
+}
+
+
+.city p{
+    font-size: 17px;
+    color: #ececec;
+       font-weight: 400;
+}
+
+
+.userInput{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.userInput1{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add{
+    padding: 10px;
+    background-color: #00C46A;
+    color: #2d3439;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: #ececec;
+    border-radius: 5px;
+    border: 1px solid #ececec;
+    background-color: #42484D;
+}
