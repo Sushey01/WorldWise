@@ -1,10 +1,14 @@
 import React from "react";
 import "./Pricing.css";
 import PricingImage from "../assets/images/pricingImage.jpg";
+import Navbar from "./Navbar";
 
 const Pricing = () => {
   return (
-    <div className="pricing-container">
+    <section className="section3">
+      <div className="pricing-main">
+        <Navbar/>
+        <div className="pricing-container">
       <div className="pricing-content">
         <h1>Simple pricing. <br/>Just $9/month.</h1>
         <p>
@@ -17,6 +21,9 @@ const Pricing = () => {
         <img src={PricingImage} alt="pricing-img"/>
       </div>
     </div>
+      </div>
+    </section>
+    
   );
 };
 

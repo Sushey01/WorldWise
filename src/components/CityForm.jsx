@@ -1,55 +1,74 @@
-import React from 'react'
-import styles from "../components/CityForm.module.css"
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import styles from "../components/CityForm.module.css";
 
-const Form = () => {
+const Form = ({ locationData }) => {
+  const [formData, setFormData] = useState({
+    city: '',
+    date: new Date().toISOString().slice(0, 10),
+    notes: ''
+  });
 
-    const [formData, setFormData] = useState("")
+  useEffect(() => {
+    if (locationData?.address) {
+      const city =
+        locationData.address.city ||
+        locationData.address.town ||
+        locationData.address.village ||
+        locationData.address.state ||
+        '';
+      const countryCode = locationData.address.country_code?.toUpperCase() || '';
+
+      setFormData(prev => ({
+        ...prev,
+        city: countryCode ? `${city}, ${countryCode}` : city
+      }));
+    }
+  }, [locationData]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   return (
     <div className={styles.form}>
       <div className={styles.city}>
         <p>City name</p>
-        
-            <input
-            type='text'
-            placeholder=''
-            className={styles.userInput}
-            value={formData}
+        <input
+          name="city"
+          type="text"
+          className={styles.userInput}
+          value={formData.city}
+          onChange={handleChange}
+        />
 
-            />
+        <p onChange={handleChange}>When did you go to {formData.city}?</p>
+        <input
+          name="date"
+          type="text"
+          className={styles.userInput}
+          value={formData.date}
+          onChange={handleChange}
+        />
 
-            <p>When did you go to ?</p>
-        
-            <input
-            type='text'
-            placeholder=''
-            className={styles.userInput}
-            value={formData}
+        <p>Notes about your trip to {formData.city || '...'}</p>
+        <textarea
+          name="notes"
+          className={styles.userInput1}
+          value={formData.notes}
+          onChange={handleChange}
+        />
 
-            />
-
-            <p>Notes about your trip to</p>
-        
-            <textarea
-            type='text'
-            placeholder=''
-            className={styles.userInput1}
-            value={formData}
-
-            />
-            <div className={styles.buttons}>
-            <button className={styles.add}>ADD</button>
-            <button className={styles.back}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
-              BACK</button>
-
-            </div>
-       
-
+        <div className={styles.buttons}>
+          <button className={styles.add}>ADD</button>
+          <button className={styles.back}>BACK</button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

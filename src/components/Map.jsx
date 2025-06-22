@@ -1,18 +1,46 @@
-import { MapContainer, TileLayer } from 'react-leaflet';
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const WorldMap = () => (
+
+const LocationMarker = ({ onLocationSelect }) => {
+  const [position, setPosition] = useState(null);
+
+  useMapEvents({
+    click: async (e) => {
+      const lat = e.latlng.lat;
+      const lng = e.latlng.lng;
+
+      setPosition([lat, lng]);
+
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+      const data = await res.json();
+
+      onLocationSelect(data); // 🔁 send to parent
+    }
+  });
+
+  return position ? (
+    <Marker position={position}>
+      <Popup>You clicked here!</Popup>
+    </Marker>
+  ) : null;
+};
+
+const WorldMap = ({ onLocationSelect }) => (
   <MapContainer
-    center={[50, 0]} // Centered on the equator
-    zoom={3}
+    center={[30, 100]}
+    zoom={4}
     scrollWheelZoom={true}
-    style={{ height: '100vh', width: '100%' }}
+    style={{ height: '100%', width: '100%' }}
   >
     <TileLayer
       attribution='&copy; OpenStreetMap contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
+    <LocationMarker onLocationSelect={onLocationSelect} />
   </MapContainer>
 );
+
 
 export default WorldMap;

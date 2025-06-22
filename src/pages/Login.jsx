@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import "../pages/Login.css"
+import Navbar from './Navbar'
+import L from 'leaflet'
 
 const Login = () => {
     const [formData, setFormData] = useState("")
 
   return (
-    <div className="login-container">
+    <section className="section4">
+      <div className="login-main">
+        <Navbar/>
+         <div className="login-container">
         <div className="login-box">
             <div className="email-address">
             <p>Email address</p>
@@ -31,6 +36,10 @@ const Login = () => {
         </div>
         
     </div>
+      </div>
+         
+    </section>
+  
   )
 }
 

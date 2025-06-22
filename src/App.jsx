@@ -9,6 +9,7 @@ import Product from './pages/Product'
 import Login from './pages/Login'
 import Map from './components/Map'
 import Cities from './components/Cities'
+import CityForm from './components/CityForm'
 
 const App = () => {
   return (
@@ -16,10 +17,15 @@ const App = () => {
   // <Map/>
     <Router>
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+        {/* <Route path="/" element={<HeroSection />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} /> */}
+
+        {/* <Route path='map' element={<Map/>}/> */}
+        <Route path='cities' element={<Cities/>}/>
+        <Route path='cityform' element={<CityForm/>}/>
+
 
       </Routes>
     </Router>

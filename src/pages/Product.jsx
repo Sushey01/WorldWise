@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 const Product = () => {
   return (
-    <section className="section1">
+    <section className="section2">
       <div className="product-main">
         <Navbar/>
       <div className="product-container">
