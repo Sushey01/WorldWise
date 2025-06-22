@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from "../components/CityForm.module.css";
 
 const Form = ({ locationData }) => {
+  // const [countryCode, setCountryCode] = useState("")
   const [formData, setFormData] = useState({
     city: '',
-    date: new Date().toISOString().slice(0, 10),
+    date: '',
     notes: ''
   });
 
@@ -16,15 +17,20 @@ const Form = ({ locationData }) => {
         locationData.address.village ||
         locationData.address.state ||
         '';
-      const countryCode = locationData.address.country_code?.toUpperCase() || '';
+//      const code = locationData.address.country_code?.toUpperCase() || '';
+// setCountryCode(code);
 
-      setFormData(prev => ({
-        ...prev,
-        city: countryCode ? `${city}, ${countryCode}` : city
-      }));
+setFormData(prev => ({
+  ...prev,
+  city,
+  date: new Date().toISOString().slice(0, 10)
+}));
+
     }
   }, [locationData]);
 
+
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({

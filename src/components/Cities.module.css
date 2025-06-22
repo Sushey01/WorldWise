@@ -1,14 +1,87 @@
-.container{
+.section5{
+    padding: 0px;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 25px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo img {
+  width: 220px;
+  display: flex;
+}
+
+.councity {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.two {
+  display: flex;
+  border: 1px solid #42484d;
+  border-radius: 8px;
+  max-width: 500px;
+  padding: 5px;
+  width: 40%;
+  background-color: #42484d;
+  color: #ececec;
+  justify-content: space-around;
+}
+
+.cities {
+  font-size: 12px;
+  background-color: #42484d;
+  border: none;
+  color: #ececec;
+  font-family: Manrope, sans-serif;
+  font-weight: 550;
+}
+
+.countries {
+  font-size: 12px;
+  background-color: #42484d;
+  border: none;
+  color: #ececec;
+  font-family: Manrope, sans-serif;
+  font-weight: 550;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  background-color: #2d3439;
+  padding: 20px;
+  padding-top: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.map {
+  width: 60%;
+}
+
+.form{
     display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.city{
-width: 35%;
-}
 
-.map{
-    width: 65%;
+
+.footer{
+    display: flex;
+    color: #AAAAAA;
+    font-size: 12px;
+    justify-content: center;
 }
