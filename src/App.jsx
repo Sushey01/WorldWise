@@ -7,28 +7,23 @@ import HeroSection from './pages/HeroSection'
 import Pricing from './pages/Pricing'
 import Product from './pages/Product'
 import Login from './pages/Login'
-import Map from './components/Map'
 import Cities from './components/Cities'
-import CityForm from './components/CityForm'
+import  {CitiesProvider } from './contexts/CitiesContext'
 
 const App = () => {
   return (
-    // <Cities/>
-  // <Map/>
-    <Router>
+    <CitiesProvider>
+          <Router>
       <Routes>
         {/* <Route path="/" element={<HeroSection />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} /> */}
-
-        {/* <Route path='map' element={<Map/>}/> */}
         <Route path='cities' element={<Cities/>}/>
-        <Route path='cityform' element={<CityForm/>}/>
-
-
-      </Routes>
+     </Routes>
     </Router>
+      </CitiesProvider>
+
   )
 }
 

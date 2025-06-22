@@ -27,18 +27,17 @@
 
 .two {
   display: flex;
-  border: 1px solid #42484d;
   border-radius: 8px;
   max-width: 500px;
-  padding: 5px;
   width: 40%;
-  background-color: #42484d;
+  border: 1px solid #42484d;
   color: #ececec;
   justify-content: space-around;
 }
 
 .cities {
   font-size: 12px;
+  padding: 5px;
   background-color: #42484d;
   border: none;
   color: #ececec;
@@ -46,14 +45,27 @@
   font-weight: 550;
 }
 
+
+
+
+.active{
+    width: 100%;
+    background-color: #2d3439;
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px;
+}
+
 .countries {
   font-size: 12px;
+  padding: 5px;
   background-color: #42484d;
   border: none;
   color: #ececec;
   font-family: Manrope, sans-serif;
   font-weight: 550;
 }
+
+
 
 .city {
   display: flex;
@@ -66,6 +78,8 @@
   padding-left: 60px;
   padding-right: 60px;
 }
+
+
 
 .map {
   width: 60%;
