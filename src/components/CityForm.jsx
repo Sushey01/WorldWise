@@ -1,36 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import styles from "../components/CityForm.module.css";
+import { useCities } from '../contexts/CitiesContext';
 
 const Form = ({ locationData }) => {
-  // const [countryCode, setCountryCode] = useState("")
+  // ✅ Get context values
+  const { dispatch, cities } = useCities();
+
+  // ✅ Form state
   const [formData, setFormData] = useState({
     city: '',
     date: '',
     notes: ''
   });
 
-  useEffect(() => {
-    if (locationData?.address) {
-      const city =
-        locationData.address.city ||
-        locationData.address.town ||
-        locationData.address.village ||
-        locationData.address.state ||
-        '';
-//      const code = locationData.address.country_code?.toUpperCase() || '';
-// setCountryCode(code);
-
-setFormData(prev => ({
-  ...prev,
-  city,
-  date: new Date().toISOString().slice(0, 10)
-}));
-
-    }
-  }, [locationData]);
+  // ✅ Load city from locationData when available
+useEffect(() => {
+  if (locationData?.address) {
+    const city =
+      locationData.address.city ||
+      locationData.address.town ||
+      locationData.address.village ||
+      locationData.address.state ||
+      '';
+    
+    setFormData(prev => ({
+      ...prev,
+      city,
+      date: new Date().toISOString().slice(0, 10),
+    }));
+  }
+}, [locationData]);
 
 
- 
+  // ✅ Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -38,6 +40,22 @@ setFormData(prev => ({
       [name]: value
     }));
   };
+
+  // ✅ Handle add city
+const handleAddCity = () => {
+  dispatch({
+    type: "ADD_CITY",
+    payload: {
+      id: Date.now(),
+      cityName: formData.city,
+      date: formData.date,
+      notes: formData.notes,
+    },
+  });
+
+  // reset form or keep as you want
+  setFormData({ city: '', date: '', notes: '' });
+};
 
   return (
     <div className={styles.form}>
@@ -51,10 +69,10 @@ setFormData(prev => ({
           onChange={handleChange}
         />
 
-        <p onChange={handleChange}>When did you go to {formData.city}?</p>
+        <p>When did you go to {formData.city}?</p>
         <input
           name="date"
-          type="text"
+          type="text" // date halda naramro dekhyo
           className={styles.userInput}
           value={formData.date}
           onChange={handleChange}
@@ -69,7 +87,7 @@ setFormData(prev => ({
         />
 
         <div className={styles.buttons}>
-          <button className={styles.add}>ADD</button>
+          <button className={styles.add} onClick={handleAddCity}>ADD</button>
           <button className={styles.back}>BACK</button>
         </div>
       </div>

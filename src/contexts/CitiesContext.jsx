@@ -10,9 +10,8 @@ function citiesReducer(state, action) {
   switch (action.type) {
     case "ADD_CITY":
       return { ...state, cities: [...state.cities, action.payload] };
-    case "GET_CITY":
-      console.log("GET_CITY called", state.cities);
-      return state;
+    case "DELETE_CITY":
+      return {...state, cities: state.cities.filter(city => city.id !==action.payload)}
     default:
       return state;
   }

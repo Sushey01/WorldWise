@@ -4,6 +4,7 @@ import Form from "./CityForm";
 import WorldMap from "./Map";
 import { useCities } from "../contexts/CitiesContext";
 import Logo from "../assets/images/worldwise.png";
+import CityList from "./CityList";
 
 const Cities = () => {
 
@@ -24,9 +25,6 @@ console.log(cities,'cities');
         <div className={styles.city}>
           <div className={styles.logo}>
             <img src={Logo} />
-            <button onClick={() => dispatch({ type: "GET_CITY" })}>
-  Check Cities (Console)
-</button>
           </div>
           <div className={styles.councity}>
             <div className={styles.two}>
@@ -35,6 +33,7 @@ console.log(cities,'cities');
           </div>
           <div className={styles.form}>
           <Form locationData={locationData} />
+          <CityList/>
             <div className={styles.footer}>
         <p>© Copyright 2025 by WorldWise Inc.</p>
       </div>

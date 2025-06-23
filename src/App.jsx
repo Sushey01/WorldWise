@@ -1,30 +1,29 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-import Navbar from './pages/Navbar'
-import HeroSection from './pages/HeroSection'
-import Pricing from './pages/Pricing'
-import Product from './pages/Product'
-import Login from './pages/Login'
-import Cities from './components/Cities'
-import  {CitiesProvider } from './contexts/CitiesContext'
+import Navbar from "./pages/Navbar";
+import HeroSection from "./pages/HeroSection";
+import Pricing from "./pages/Pricing";
+import Product from "./pages/Product";
+import Login from "./pages/Login";
+import Cities from "./components/Cities";
+import CityList from "./components/CityList";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 const App = () => {
   return (
-    <CitiesProvider>
-          <Router>
+    <Router>
       <Routes>
-        {/* <Route path="/" element={<HeroSection />} />
+        <Route path="/" element={<HeroSection />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/login" element={<Login />} /> */}
-        <Route path='cities' element={<Cities/>}/>
-     </Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="cities" element={<Cities />} />
+        <Route path="/city" element={<CityList />} />
+      </Routes>
     </Router>
-      </CitiesProvider>
+  );
+};
 
-  )
-}
-
-export default App
+export default App;
