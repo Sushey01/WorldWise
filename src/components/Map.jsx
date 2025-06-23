@@ -6,7 +6,6 @@ import { useCities } from '../contexts/CitiesContext';
 
 const LocationMarker = ({ onLocationSelect }) => {
   const [position, setPosition] = useState(null);
-  const {dispatch} = useCities()
 
   useMapEvents({
     click: async (e) => {
@@ -19,18 +18,6 @@ const LocationMarker = ({ onLocationSelect }) => {
       const data = await res.json();
 
       onLocationSelect(data); // 🔁 send to parent
-
-      // Dispatch to context
-      // dispatch({
-      //   type: 'ADD_CITY',
-      //   payload: {
-      //     name: data.address?.city || data.address?.town || 'Unknown',
-      //     country: data.address?.country || 'Unknown',
-      //     date: new Date().toISOString(),
-      //     lat,
-      //     lon: lng,
-      //   },
-      // });
 
     }
   });

@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Cities from "./components/Cities";
 import CityList from "./components/CityList";
 import { CitiesProvider } from "./contexts/CitiesContext";
+import CountryList from "./components/CountryList";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="cities" element={<Cities />} />
-        <Route path="/city" element={<CityList />} />
+        <Route path="/countries" element={<CountryList />} />
       </Routes>
     </Router>
   );

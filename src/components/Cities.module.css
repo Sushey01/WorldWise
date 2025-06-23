@@ -45,14 +45,28 @@
   font-weight: 550;
 }
 
+.cities:hover{
+    border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px;
+  background-color: #2d3439;
+}
+
+.countries:hover{
+  background-color: #2d3439;
+    border-top-left-radius: 5px ;
+  border-bottom-left-radius: 5px;
+}
+
+
+
+
 
 
 
 .active{
     width: 100%;
     background-color: #2d3439;
-  border-top-right-radius: 5px ;
-  border-bottom-right-radius: 5px;
+
 }
 
 .countries {
@@ -64,6 +78,7 @@
   font-family: Manrope, sans-serif;
   font-weight: 550;
 }
+
 
 
 

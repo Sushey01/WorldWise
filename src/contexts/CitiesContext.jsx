@@ -12,6 +12,10 @@ function citiesReducer(state, action) {
       return { ...state, cities: [...state.cities, action.payload] };
     case "DELETE_CITY":
       return {...state, cities: state.cities.filter(city => city.id !==action.payload)}
+
+      case "GET_CITY":
+        return { ...state, countries: [...state.countries, action.payload]};
+        
     default:
       return state;
   }

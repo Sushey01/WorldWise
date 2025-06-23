@@ -15,9 +15,9 @@ const CityList = () => {
   if (!cities.length) return <p>No cities added yet.</p>;
 
 
-  const addcity = (city) => {
-    dispatch({type: "ADD_CITY", payload: city})
-  }
+  // const addcity = (city) => {
+  //   dispatch({type: "ADD_CITY", payload: city})
+  // }
 
   const deleteCity = (id) => {
     dispatch({ type: "DELETE_CITY", payload: id });
