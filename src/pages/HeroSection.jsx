@@ -1,8 +1,15 @@
 import React from "react";
 import "../pages/HeroSection.css"
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+
+  const navigate=useNavigate("")
+
+  function handleTrack(){
+    navigate("/login")
+  }
  
   return (
     <section className="section1">
@@ -20,7 +27,7 @@ const HeroSection = () => {
               friends how you have wandered the world.
             </h2>
 
-            <button className="tracking-button">START TRACKING NOW</button>
+            <button className="tracking-button" onClick={handleTrack} >START TRACKING NOW</button>
           </div>
         </div>
     </section>
