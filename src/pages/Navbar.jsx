@@ -19,11 +19,15 @@ const Navbar = () => {
     navigate("/login")
   }
 
+  function handleClick(){
+    navigate("/")
+  }
+
 
   return (
     <div className="nav-title">
       <div className="nav-logo">
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo"  onClick={handleClick}/>
         <div className="nav">
           <Link to="/pricing">Pricing</Link>
           <Link to="/product">Product</Link>
