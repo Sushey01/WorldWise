@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import "../pages/Login.css"
 import Navbar from './Navbar'
 import L from 'leaflet'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+
+  const handleLogin=()=>{
+    navigate("/app")
+  }
+
+  const navigate = useNavigate("")
     const [formData, setFormData] = useState("")
 
   return (
@@ -32,7 +39,7 @@ const Login = () => {
             />
         </div>
 
-        <button className='another-login-button'>LOGIN</button>
+        <button className='another-login-button' onClick={handleLogin}>LOGIN</button>
         </div>
         
     </div>

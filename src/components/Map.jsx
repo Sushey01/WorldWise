@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useCities } from '../contexts/CitiesContext';
-import User from './User';
+
 import { useNavigate } from 'react-router-dom';
+import UserPosition from './UserPosition';
 
 
 const LocationMarker = () => {

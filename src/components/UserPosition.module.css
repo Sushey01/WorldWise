@@ -2,7 +2,6 @@
     background-color: #00c46a;
     position: absolute;
     z-index: 999;
-    cursor: pointer;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -12,9 +11,12 @@
 }
 
 
-.position p{
+.position button{
+    background-color: transparent;
+    border: none;
     font-weight: 600;
     font-family: Manrope, sans-serif;
     font-size: 14px;
     color: #2d3439;
+    cursor: pointer;
 }

@@ -1,9 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../pages/Navbar.css";
 import Logo from "../assets/images/worldwise.png"
 
 const Navbar = () => {
+
+  const navigate = useNavigate("")
+
+
+  const handleLogin =()=>{
+    navigate("/login")
+  }
+
+
+
   return (
     <div className="nav-title">
       <div className="nav-logo">
@@ -13,7 +23,7 @@ const Navbar = () => {
           <Link to="/product">Product</Link>
           
           <Link to="/login">
-            <button className="login-button">LOGIN</button>
+            <button className="login-button" onClick={handleLogin}>LOGIN</button>
           </Link>
         </div>
       </div>
