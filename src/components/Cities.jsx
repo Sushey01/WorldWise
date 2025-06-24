@@ -12,8 +12,8 @@ const Cities = () => {
   const { cities } = useCities();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(false);
-  const [locationData, setLocationData] = useState(null);
-  const [showForm, setShowForm] = useState(false);
+  // const [locationData, setLocationData] = useState(null);
+  // const [showForm, setShowForm] = useState(false);
 
   // When user clicks on map
   // const handleLocationSelect = (location) => {
