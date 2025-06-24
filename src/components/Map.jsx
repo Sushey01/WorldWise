@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import 'leaflet/dist/leaflet.css';
 
 import { useNavigate } from 'react-router-dom';
-import UserPosition from './UserPosition';
+
 
 
 const LocationMarker = () => {
@@ -41,7 +41,7 @@ const WorldMap = () => (
       attribution='&copy; OpenStreetMap contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <LocationMarker  />
+    <LocationMarker/>
   </MapContainer>
 );
 

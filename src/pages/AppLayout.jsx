@@ -12,7 +12,7 @@ const AppLayout = () => {
     <div className={styles.app}>
       <Cities/>
       <User/>
-      <UserPosition/>
+      {/* <UserPosition/> */}
     </div>
   )
 }

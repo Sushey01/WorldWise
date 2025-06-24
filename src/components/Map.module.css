@@ -7,6 +7,29 @@
   z-index: 99;
 }
 
+.position{
+    background-color: #00c46a;
+    position: absolute;
+    z-index: 999;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    top: 85%;
+    right: 15%;
+    transform: translate(-50%, -50%);
+}
+
+
+.position button{
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    color: #2d3439;
+    cursor: pointer;
+}
+
 
 
 

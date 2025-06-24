@@ -7,11 +7,17 @@ const Navbar = () => {
 
   const navigate = useNavigate("")
 
+//Two Methods for navigating
 
-  const handleLogin =()=>{
+// 1. Arrow Function Declaration
+  // const handleLogin =()=>{
+  //   navigate("/login")
+  // }
+
+// 2. Function Declaration
+  function handleLogin(){
     navigate("/login")
   }
-
 
 
   return (
