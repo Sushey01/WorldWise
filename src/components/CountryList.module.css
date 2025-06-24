@@ -1,5 +1,11 @@
 .countryList{
-    padding: 10px;
+    display: flex;
+  gap: 20px;
+}
+
+.countryCard{
+    display: flex;
+      padding: 10px;
     border: 1px solid;
     border-left: 4px solid #c8c805;
     border-radius: 5px;

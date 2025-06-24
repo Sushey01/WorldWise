@@ -1,0 +1,20 @@
+.position{
+    background-color: #00c46a;
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    top: 85%;
+    right: 15%;
+    transform: translate(-50%, -50%);
+}
+
+
+.position p{
+    font-weight: 600;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    color: #2d3439;
+}

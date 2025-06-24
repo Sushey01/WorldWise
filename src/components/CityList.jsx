@@ -12,7 +12,7 @@ const formatDate = (date) =>
 const CityList = () => {
   const { cities, dispatch } = useCities();
 
-  if (!cities.length) return <p>No cities added yet.</p>;
+  if (!cities.length) return <p>👋 Add your first city by clicking on a city on the map</p>;
 
 
   // const addcity = (city) => {

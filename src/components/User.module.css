@@ -1,6 +1,10 @@
 .main{
     display: flex;
     justify-content: flex-end;
+    z-index: 999;
+    position: absolute;
+     right: 30px;
+     top: 30px;
 }
 
 
@@ -10,7 +14,7 @@
     padding: 10px;
     border-radius: 7px;
     background-color: #2d3439;
-
+    cursor: pointer;
 }
 
 .image{
@@ -41,4 +45,5 @@
     font-size: 12px;
     font-weight: 600;
     font-family: Manrope, sans-serif;
+    cursor: pointer;
  }

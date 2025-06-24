@@ -3,11 +3,12 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import 'leaflet/dist/leaflet.css';
 import { useCities } from '../contexts/CitiesContext';
 import User from './User';
+import { useNavigate } from 'react-router-dom';
 
 
-const LocationMarker = ({ onLocationSelect }) => {
+const LocationMarker = () => {
   const [position, setPosition] = useState(null);
-
+const navigate = useNavigate();
   useMapEvents({
     click: async (e) => {
       const lat = e.latlng.lat;
@@ -17,8 +18,7 @@ const LocationMarker = ({ onLocationSelect }) => {
 
       const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
       const data = await res.json();
-
-      onLocationSelect(data); // 🔁 send to parent
+      navigate(`/app/form?lat=${lat}&lng=${lng}`)
 
     }
   });
@@ -30,7 +30,7 @@ const LocationMarker = ({ onLocationSelect }) => {
   ) : null;
 };
 
-const WorldMap = ({ onLocationSelect }) => (
+const WorldMap = () => (
   <MapContainer
     center={[30, 100]}
     zoom={4}
@@ -41,8 +41,7 @@ const WorldMap = ({ onLocationSelect }) => (
       attribution='&copy; OpenStreetMap contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <LocationMarker onLocationSelect={onLocationSelect} />
-  <div className="user"><User/></div>
+    <LocationMarker  />
   </MapContainer>
 );
 

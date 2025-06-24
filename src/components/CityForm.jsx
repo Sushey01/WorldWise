@@ -1,32 +1,49 @@
 import React, { useState, useEffect } from "react";
 import styles from "../components/CityForm.module.css";
 import { useCities } from "../contexts/CitiesContext";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
-const Form = ({ locationData, onClose }) => {
+const Form = ({ onClose }) => {
+
+  const navigate =useNavigate()
   const { dispatch } = useCities();
-
+  const [country, setCountry] = useState("Unknown")
+  const [isLoading ,setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     city: "",
     date: "",
     notes: ""
   });
+  const [searchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
 
   useEffect(() => {
-    if (locationData?.address) {
+
+  const fetchData = async()  => {
+    setIsLoading(true);
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+      const data = await res.json();
       const city =
-        locationData.address.city ||
-        locationData.address.town ||
-        locationData.address.village ||
-        locationData.address.state ||
+        data.address.city ||
+        data.address.town ||
+        data.address.village ||
+        data.address.state ||
         "Unknown";
 
-      setFormData({
+
+        setCountry(data.address.country || "Unknown")
+
+         setFormData({
         city,
         date: new Date().toISOString().slice(0, 10),
         notes: ""
       });
+      setIsLoading(false);
     }
-  }, [locationData]);
+  fetchData();
+  },[lng,lat])
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +54,8 @@ const Form = ({ locationData, onClose }) => {
   };
 
   const handleAddCity = () => {
-    const country = locationData?.address?.country|| "Unknown"
+    // const country = data?.address?.country|| "Unknown"
+
     dispatch({
       type: "ADD_CITY",
       payload: {
@@ -49,10 +67,16 @@ const Form = ({ locationData, onClose }) => {
       }
     });
 
-    if (onClose) onClose(); // Hide form & show list
+    navigate("/app/cities");
+    
+
   };
 
   return (
+    <>
+   { isLoading ? <p>loading....</p>:(
+
+
     <div className={styles.form}>
       <div className={styles.city}>
         <p>City name</p>
@@ -91,6 +115,10 @@ const Form = ({ locationData, onClose }) => {
         </div>
       </div>
     </div>
+   )}
+    
+    </>
+
   );
 };
 

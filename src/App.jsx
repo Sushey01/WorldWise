@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./pages/Navbar";
@@ -13,6 +13,8 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 import CountryList from "./components/CountryList";
 import User from "./components/User";
 import Map from "./components/Map"
+import AppLayout from "./pages/AppLayout";
+import Form from "./components/CityForm";
 
 const App = () => {
   return (
@@ -22,8 +24,16 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
-        <Route path="cities" element={<Cities />} />
+        {/* <Route path="/cities" element={<Cities />} /> */}
         <Route path="/user" element={<User />} />
+       
+        <Route path="app" element={<AppLayout />} >
+        <Route index element={<Navigate replace to="cities"/>}/>
+        <Route path="cities" element={<CityList/>}/>
+        <Route path="cities/:id" element={<CityList/>}/>
+        <Route path="countries" element={<CountryList/>}/>
+        <Route path="form" element={<Form/>}/>
+        </Route>
       </Routes>
     </Router>
   );
