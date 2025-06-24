@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useCities } from '../contexts/CitiesContext';
+import User from './User';
 
 
 const LocationMarker = ({ onLocationSelect }) => {
@@ -41,6 +42,7 @@ const WorldMap = ({ onLocationSelect }) => (
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
     <LocationMarker onLocationSelect={onLocationSelect} />
+  <div className="user"><User/></div>
   </MapContainer>
 );
 

@@ -1,0 +1,44 @@
+.main{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.box{
+    display: flex;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #2d3439;
+
+}
+
+.image{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+ .image img{
+    width: 45px;
+    border-radius: 50px;
+ }
+
+
+ .image p{
+    color: #ececec;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 600;
+ }
+
+
+ .button{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #42484d;
+    color: #ececec;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Manrope, sans-serif;
+ }

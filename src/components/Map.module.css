@@ -4,5 +4,14 @@
   width: 100%;
   background-color: var(--color-dark--2);
   position: relative;
+  z-index: -1;
+}
+
+
+.user{
+  top: -20%;
+  position: absolute;
+  display: inline-flex;
+  z-index: 999;
 }
 
