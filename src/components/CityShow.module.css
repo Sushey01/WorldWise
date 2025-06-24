@@ -1,0 +1,63 @@
+.city{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #42484d;
+    border-radius: 5px;
+}
+
+.date{
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.date p{
+    font-size: 11px;
+    color: #aaa;
+    font-family: Manrope, sans-serif;
+}
+
+.date h3{
+    font-size: 16px;
+    color: #ececec;
+    font-family: Manrope, sans-serif;
+}
+
+.more p{
+    font-size: 11px;
+    color: #aaa;
+    font-family: Manrope, sans-serif;
+}
+
+.wiki{
+    display: flex;
+    align-items: center;
+}
+
+
+.wiki a{
+    font-size: 16px;
+    color: #FFB545;
+    font-family: Manrope, sans-serif;
+    border-bottom: 1px solid #FFB545;
+}
+
+
+.click{
+    display: flex;
+    cursor: pointer;
+    border: 1p solid #ececec;
+    border-radius: 3px;
+    padding: 5px;
+    width: 15%;
+    align-items: center;
+    background-color: #42484d;
+}
+
+.click h3{
+    font-family: Manrope, sans-serif;
+    color: #ececec;
+}

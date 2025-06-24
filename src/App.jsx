@@ -15,6 +15,7 @@ import User from "./components/User";
 import Map from "./components/Map"
 import AppLayout from "./pages/AppLayout";
 import Form from "./components/CityForm";
+import CityShow from "./components/CityShow";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/cities" element={<Cities />} /> */}
         <Route path="/user" element={<User />} />
+        <Route path="/cityshow" element={<CityShow />} />
        
         <Route path="app" element={<AppLayout />} >
         <Route index element={<Navigate replace to="cities"/>}/>
