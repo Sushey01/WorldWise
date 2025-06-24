@@ -1,8 +1,9 @@
 .city{
-    width: 100%;
+    width:50%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-self: center;
     padding: 15px;
     background-color: #42484d;
     border-radius: 5px;
@@ -49,7 +50,7 @@ gap: 5px;
 .click{
     display: flex;
     cursor: pointer;
-    border: 1p solid #ececec;
+    border: 1px solid #ececec;
     border-radius: 3px;
     padding: 5px;
     width: 15%;
