@@ -1,5 +1,5 @@
 .city{
-    width:50%;
+    width:100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -8,6 +8,25 @@
     background-color: #42484d;
     border-radius: 5px;
 }
+
+.name{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.name p{
+     font-size: 11px;
+    color: #aaa;
+    font-family: Manrope, sans-serif;
+}
+
+.name h3{
+    font-size: 16px;
+    color: #ececec;
+    font-family: Manrope, sans-serif;
+}
+
 
 .date{
 display: flex;
@@ -43,7 +62,6 @@ gap: 5px;
     font-size: 16px;
     color: #FFB545;
     font-family: Manrope, sans-serif;
-    border-bottom: 1px solid #FFB545;
 }
 
 
@@ -53,9 +71,10 @@ gap: 5px;
     border: 1px solid #ececec;
     border-radius: 3px;
     padding: 5px;
-    width: 15%;
+    width: 30%;
     align-items: center;
     background-color: #42484d;
+    gap: 3px;
 }
 
 .click h3{

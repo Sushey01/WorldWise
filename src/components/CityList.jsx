@@ -1,6 +1,7 @@
 import React from "react";
 import { useCities } from "../contexts/CitiesContext";
 import styles from "../components/CityList.module.css";
+import { useNavigate } from "react-router-dom";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -19,14 +20,20 @@ const CityList = () => {
   //   dispatch({type: "ADD_CITY", payload: city})
   // }
 
+  const navigate = useNavigate("")
+
   const deleteCity = (id) => {
     dispatch({ type: "DELETE_CITY", payload: id });
   };
 
+  function handleClick(id){
+    navigate(`/app/cityshow/${id}`)
+  }
+
   return (
     <div className={styles.cityList}>
       {cities.map((city) => (
-        <div key={city.id} className={styles.cityCard}>
+        <div key={city.id} className={styles.cityCard} onClick={()=> handleClick(city.id)}>
           <span className={styles.cityName}>{city.cityName || "Unknown City"}</span>
           <span className={styles.date}>({formatDate(city.date)})</span>
           <button

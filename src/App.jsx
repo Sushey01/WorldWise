@@ -17,8 +17,12 @@ import AppLayout from "./pages/AppLayout";
 import Form from "./components/CityForm";
 import CityShow from "./components/CityShow";
 
+
+
+
 const App = () => {
   return (
+
     <Router>
       <Routes>
         <Route path="/" element={<HeroSection />} />
@@ -27,15 +31,18 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/cities" element={<Cities />} /> */}
         <Route path="/user" element={<User />} />
-        <Route path="/cityshow" element={<CityShow />} />
+       <Route path="/cityshow/:id" element={<CityShow />} />
+
+
        
-        <Route path="app" element={<AppLayout />} >
-        <Route index element={<Navigate replace to="cities"/>}/>
-        <Route path="cities" element={<CityList/>}/>
-        <Route path="cities/:id" element={<CityList/>}/>
-        <Route path="countries" element={<CountryList/>}/>
-        <Route path="form" element={<Form/>}/>
-        </Route>
+
+     <Route path="app" element={<AppLayout />}>
+    <Route index element={<Navigate replace to="cities" />} />
+    <Route path="cities" element={<CityList />} />
+    <Route path="cityshow/:id" element={<CityShow />} />
+    <Route path="countries" element={<CountryList />} />
+    <Route path="form" element={<Form />} />
+  </Route>
       </Routes>
     </Router>
   );
