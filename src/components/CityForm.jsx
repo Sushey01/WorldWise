@@ -88,7 +88,7 @@ const Form = ({ onClose }) => {
           onChange={handleChange}
         />
 
-        <p>When did you go to {formData.city || "..."}</p>
+        <p>When did you go to {formData.city || "..."}?</p>
         <input
           name="date"
           type="text"
